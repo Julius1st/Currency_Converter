@@ -13,6 +13,7 @@ public class ApiConnection {
     // Keys for JSON response of api
     public static final String CONVERSION_RATE = "conversion_rate";
     public static final String ERROR = "error";
+    private static final String apiKey = ""; //Insert or import ApiKey here. Link to website: https://www.exchangerate-api.com
 
 
     public Double getRate(ConversionRates.Codes base, ConversionRates.Codes target) {
@@ -41,7 +42,7 @@ public class ApiConnection {
 
     private String apiRequest(ConversionRates.Codes base, ConversionRates.Codes target) throws IOException {
         // Setting URL
-        String url_str = "https://v6.exchangerate-api.com/v6/90e2a85aec8220829a3185d0/pair/"
+        String url_str = "https://v6.exchangerate-api.com/v6/" + apiKey + "/pair/"
                 + base.name() + "/" + target.name();
 
         // Making Request
